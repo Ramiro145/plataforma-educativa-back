@@ -6,6 +6,7 @@ import com.ejercicio.plataformaeducativa.Model.UserSec;
 import com.ejercicio.plataformaeducativa.Service.IRoleService;
 import com.ejercicio.plataformaeducativa.Service.IUserService;
 import com.ejercicio.plataformaeducativa.mapper.UserSecMapper;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import java.util.List;
 @RequestMapping ("/api/users")
 @PreAuthorize("denyAll()")
 @RequiredArgsConstructor
+@SecurityRequirement(name = "bearerAuth")
 public class UserController {
 
 

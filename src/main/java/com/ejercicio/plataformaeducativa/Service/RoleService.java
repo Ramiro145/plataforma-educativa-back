@@ -86,8 +86,8 @@ public class RoleService extends BaseServiceImp<Role, Long> implements IRoleServ
 
         Role rolExist = roleRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Role not found with id: " + id));
 
-        if(roleRequestDTO.name() != null && !roleRequestDTO.name().isBlank()){
-            rolExist.setRoleName(roleRequestDTO.name());
+        if(roleRequestDTO.roleName() != null && !roleRequestDTO.roleName().isBlank()){
+            rolExist.setRoleName(roleRequestDTO.roleName());
         }
 
         if(roleRequestDTO.permissionsIds() != null){

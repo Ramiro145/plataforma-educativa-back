@@ -7,6 +7,7 @@ import com.ejercicio.plataformaeducativa.DTO.student.StudentSummaryDTO;
 import com.ejercicio.plataformaeducativa.Model.Course;
 import com.ejercicio.plataformaeducativa.Service.CourseService;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping ("/courses")
 @RequiredArgsConstructor
+@SecurityRequirement(name = "bearerAuth")
 public class CourseController {
 
 

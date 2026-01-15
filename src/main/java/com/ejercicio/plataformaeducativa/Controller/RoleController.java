@@ -6,6 +6,7 @@ import com.ejercicio.plataformaeducativa.Model.Role;
 import com.ejercicio.plataformaeducativa.Service.IPermissionService;
 import com.ejercicio.plataformaeducativa.Service.IRoleService;
 import com.ejercicio.plataformaeducativa.mapper.RoleMapper;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,20 +19,21 @@ import java.util.List;
 @RequestMapping ("/api/roles")
 @PreAuthorize("denyAll()")
 @RequiredArgsConstructor
+@SecurityRequirement(name = "bearerAuth")
 public class RoleController {
 
     private final IRoleService roleService;
     private final RoleMapper roleMapper;
 
     @GetMapping
-    @PreAuthorize("permitAll()")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<List<RoleResponseDTO>> getAllRoles(){
         List<Role> roles = roleService.findAll();
         return ResponseEntity.ok(roleMapper.toDTOList(roles));
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("permitAll()")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<RoleResponseDTO> getRoleById(@PathVariable Long id){
         Role role = roleService.findById(id);
         RoleResponseDTO roleResponse = roleMapper.toDTO(role);

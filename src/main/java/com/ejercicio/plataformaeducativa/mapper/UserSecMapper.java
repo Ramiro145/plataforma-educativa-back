@@ -21,6 +21,7 @@ public interface UserSecMapper {
     @Mapping(target = "credentialNotExpired", constant = "true")
     UserSec toEntity(UserSecRequestDTO dto);
 
+    @Mapping(target = "roles", source = "rolesSet")
     UserSecResponseDTO toDTO(UserSec userSec);
 
 }

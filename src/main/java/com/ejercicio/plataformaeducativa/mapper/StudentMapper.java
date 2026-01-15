@@ -13,6 +13,8 @@ import org.mapstruct.Mapping;
 public interface StudentMapper {
 
     //Entity -> Response
+    @Mapping(target = "userId", source = "user.id")
+    @Mapping(target = "courseSummaryList", source = "courses")
     StudentResponseDTO toDTO(Student student);
 
     //Entity -> Summary

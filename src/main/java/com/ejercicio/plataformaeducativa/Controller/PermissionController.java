@@ -5,6 +5,7 @@ import com.ejercicio.plataformaeducativa.DTO.user.PermissionResponseDTO;
 import com.ejercicio.plataformaeducativa.Model.Permission;
 import com.ejercicio.plataformaeducativa.Service.IPermissionService;
 import com.ejercicio.plataformaeducativa.mapper.PermissionMapper;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import java.util.Optional;
 @RequestMapping ("/api/permissions")
 @PreAuthorize("denyAll()")
 @RequiredArgsConstructor
+@SecurityRequirement(name = "bearerAuth")
 public class PermissionController {
 
     private final IPermissionService permissionService;

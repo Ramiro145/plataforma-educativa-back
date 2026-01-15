@@ -7,6 +7,7 @@ import com.ejercicio.plataformaeducativa.Model.Professor;
 import com.ejercicio.plataformaeducativa.Service.IProfessorService;
 import com.ejercicio.plataformaeducativa.Service.ProfessorService;
 import com.ejercicio.plataformaeducativa.mapper.ProfessorMapper;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/professor")
 @RequiredArgsConstructor
+@SecurityRequirement(name = "bearerAuth")
 public class ProfessorController {
 
     private final IProfessorService professorService;

@@ -18,6 +18,8 @@ import java.util.List;
 public interface CourseMapper {
 
     //Entity -> Response
+    @Mapping(target = "professor", source = "professor")
+    @Mapping(target = "students", source = "students")
     CourseResponseDTO toDTO(Course course);
 
     //Entity -> Summary
