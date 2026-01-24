@@ -1,6 +1,6 @@
-# 📚 Plataforma Educativa – Backend
+# Plataforma Educativa – Backend
 
-## 📌 Descripción General
+## Descripción General
 
 Este proyecto es un **backend de una plataforma educativa** desarrollado con **Spring Boot**, enfocado en aplicar **buenas prácticas profesionales** de arquitectura, seguridad y diseño, orientado a un perfil **Junior / Semi-Junior**.
 
@@ -16,7 +16,7 @@ Incluye **seguridad basada en JWT**, control de acceso por roles, uso de **DTOs*
 
 ---
 
-## 🧱 Arquitectura del Proyecto
+## Arquitectura del Proyecto
 
 El proyecto sigue una arquitectura **en capas**, separando responsabilidades:
 
@@ -63,60 +63,7 @@ Controller  →  Service  →  Repository  →  Database
 
 ---
 
-## 📦 Estructura de Paquetes
-
-```
-com.ejercicio.plataformaeducativa
-│
-├── Controller
-│   ├── AuthController
-│   ├── CourseController
-│   ├── ProfessorController
-│   └── RoleController
-│
-├── Service
-│   ├── impl
-│   │   ├── CourseService
-│   │   ├── UserService
-│   │   └── RoleService
-│   └── interfaces
-│
-├── Repository
-│   ├── UserRepository
-│   ├── CourseRepository
-│   └── RoleRepository
-│
-├── Entity
-│   ├── UserSec
-│   ├── Role
-│   ├── Permission
-│   ├── Course
-│   ├── Professor
-│   └── Student
-│
-├── DTO
-│   ├── request
-│   ├── response
-│   └── summary
-│
-├── mapper
-│   ├── CourseMapper
-│   ├── ProfessorMapper
-│   └── StudentMapper
-│
-├── security
-│   ├── JwtFilter
-│   ├── JwtUtils
-│   ├── SecurityConfig
-│   └── UserDetailsServiceImpl
-│
-└── config
-    └── MapStructConfig
-```
-
----
-
-## 🔐 Seguridad
+## Seguridad
 
 ### Autenticación
 
@@ -146,7 +93,7 @@ Authorization: Bearer <token>
 
 ---
 
-## 🧩 Roles y Permisos
+## Roles y Permisos
 
 Relación **Muchos a Muchos**:
 
@@ -163,7 +110,7 @@ Ejemplos de permisos:
 
 ---
 
-## 📘 MapStruct & DTOs
+## MapStruct & DTOs
 
 ### Uso de DTOs
 
@@ -183,14 +130,14 @@ Ejemplos de permisos:
 )
 ```
 
-⚠️ Se evita la **dependencia circular** entre mappers:
+Se evita la **dependencia circular** entre mappers:
 
 * `CourseMapper` no depende de `ProfessorMapper` y viceversa
 * Se usan `SummaryDTOs` para romper ciclos
 
 ---
 
-## 📊 Modelo de Dominio (UML)
+## Modelo de Dominio (UML)
 
 El proyecto incluye un **UML de dominio**, representando:
 
@@ -205,7 +152,7 @@ Las relaciones reflejan la lógica real del negocio, no la implementación técn
 
 ---
 
-## 📖 Swagger / OpenAPI
+## Swagger / OpenAPI
 
 Acceso:
 
@@ -221,7 +168,7 @@ Configurado con:
 
 ---
 
-## 🎯 Objetivo del Proyecto
+## Objetivo del Proyecto
 
 Este proyecto está diseñado para:
 
@@ -232,22 +179,11 @@ Este proyecto está diseñado para:
 
 ---
 
-## 🚀 Posibles Mejoras Futuras
-
+## Posibles Mejoras Futuras
 * Refresh Tokens
-* Auditoría (createdAt, updatedAt)
 * Tests unitarios y de integración
 * Paginación y filtros
 * Cache con Redis
 * Dockerización
-
 ---
-
-## 👤 Autor
-
-**Ramiro González**
-Backend Developer Jr
-
----
-
-✅ Proyecto enfocado en aprender, crecer y demostrar competencias reales de desarrollo backend profesional.
+Proyecto enfocado en aprender, crecer y demostrar competencias reales de desarrollo backend profesional.
