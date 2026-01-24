@@ -38,7 +38,7 @@ Controller  →  Service  →  Repository  →  Database
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 ### Backend
 
